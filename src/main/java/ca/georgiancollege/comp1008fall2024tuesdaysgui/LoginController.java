@@ -49,6 +49,21 @@ public class LoginController {
     LoginModel model = new LoginModel();
 
     @FXML
+    void onRegister(ActionEvent event){
+
+        try{
+            model.registerUser(txtUsername.getText(), txtPassword.getText());
+            txtMessage.setTextFill(Color.GREEN);
+            txtMessage.setText("Registration Successful!");
+        }
+        catch (Exception ex){
+            txtMessage.setTextFill(Color.RED);
+            txtMessage.setText(ex.getMessage());
+        }
+
+    }
+
+    @FXML
     void onSubmit(ActionEvent event) {
 
         try{

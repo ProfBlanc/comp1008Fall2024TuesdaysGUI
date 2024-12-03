@@ -23,3 +23,26 @@ loginUser method
 if username is "admin"
 and password is "pass"
 do nothing. ELSE, throw an exception
+
+
+Task 4
+Add a button to the login named Register
+Change text of existing button from Submit to Login
+
+Task 5
+Add an onAction event to the Register button
+
+Task 6
+Once user clicks on onRegister button
+    evoke the registerUser method of the LoginMoIdel model
+    if any exception arise, display them to the view
+    If registration goes well, display success message to screen
+
+Task 7
+In data directory, create a new file named username.txt, where username is the username
+The content of the text file should be the password (on one line)
+
+Task 8
+Change the login process, so when user clicks the Login button,
+the function checks for a file named username.txt and reads its content
+Determines if the username/password combo is correct based on the filename and file content
