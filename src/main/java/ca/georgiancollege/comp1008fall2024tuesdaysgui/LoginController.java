@@ -18,12 +18,49 @@ public class LoginController {
     @FXML
     private TextField txtUsername;
 
+    void example1(){
+
+//        System.out.println(txtUsername.getText());
+//        System.out.println(txtPassword.getText());
+
+        if(
+                (
+                        txtUsername.getText().equalsIgnoreCase("admin")
+                                &&
+                                txtPassword.getText().equalsIgnoreCase("pass")
+                )
+                        ||
+                        (txtUsername.getText().equalsIgnoreCase("firstname"))
+                                &&
+                                txtPassword.getText().equalsIgnoreCase("lastname")
+        )
+        {
+            txtMessage.setTextFill(Color.GREEN);
+            txtMessage.setText("Login Successful");
+        }
+        else{
+            txtMessage.setTextFill(Color.RED);
+            txtMessage.setText("Incorrect Username and/or Password");
+        }
+
+    }
+
+
+    LoginModel model = new LoginModel();
+
     @FXML
     void onSubmit(ActionEvent event) {
 
+        try{
+            model.loginUser(txtUsername.getText(), txtPassword.getText());
+            txtMessage.setTextFill(Color.GREEN);
+            txtMessage.setText("Login Successful!");
+        }
+        catch (Exception ex){
+            txtMessage.setTextFill(Color.RED);
+            txtMessage.setText(ex.getMessage());
+        }
 
-        System.out.println(txtUsername.getText());
-        System.out.println(txtPassword.getText());
 
     }
 
@@ -37,7 +74,7 @@ public class LoginController {
 
         txtMessage.setTextFill(Color.GREEN);
         txtMessage.setText("Green is a good color!");
-
+        txtMessage.setText("");
     }
 
 }

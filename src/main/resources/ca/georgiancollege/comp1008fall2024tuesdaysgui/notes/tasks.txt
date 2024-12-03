@@ -1,0 +1,25 @@
+Task 1: make sure no text is displayed
+	when user sees form for first
+	time
+	HINT: empty text
+Task 2:
+	Once user submits form
+	if username/password combo
+	is one of the following
+	comp-1008
+	firstname-lastname
+	georgian-college
+
+	Then display a success message
+	in green colored text
+	If not, display error message
+	in red text
+
+
+Task 3
+Complete the Login Model's
+loginUser method
+
+if username is "admin"
+and password is "pass"
+do nothing. ELSE, throw an exception
